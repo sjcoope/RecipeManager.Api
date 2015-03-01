@@ -39,7 +39,13 @@ namespace SJCNet.RecipeManager.Test.Unit
 
         #endregion
 
-        // TODO: Reinstate tests
+        [TestMethod]
+        public void SamplePassingTest()
+        {
+            Assert.IsTrue(true);
+        }
+
+        // TODO: Replace DB calls with mocks.
         //[TestMethod]
         //public void GetById_Test()
         //{
