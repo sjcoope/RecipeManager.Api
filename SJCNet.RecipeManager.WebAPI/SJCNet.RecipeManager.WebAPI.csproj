@@ -109,8 +109,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Development.pubxml" />
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\DevelopmentTest.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
