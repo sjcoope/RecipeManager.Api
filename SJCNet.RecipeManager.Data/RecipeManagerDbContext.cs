@@ -25,7 +25,7 @@ namespace SJCNet.RecipeManager.Data
             this.Configuration.ValidateOnSaveEnabled = false;
 
             // Recreate the database and initialize the data.
-            Database.SetInitializer<RecipeManagerDbContext>(new RecipeManagerDbInitializer());
+            //Database.SetInitializer<RecipeManagerDbContext>(new RecipeManagerDbInitializer());
         }
 
         #endregion
