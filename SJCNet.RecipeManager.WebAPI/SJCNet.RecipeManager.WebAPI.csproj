@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>true</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -108,8 +109,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Development.pubxml" />
-    <None Include="Properties\PublishProfiles\DevelopmentTest.pubxml" />
+    <None Include="Properties\PublishProfiles\Development.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,6 +143,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!--<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />-->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
