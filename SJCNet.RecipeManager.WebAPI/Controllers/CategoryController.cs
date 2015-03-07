@@ -20,41 +20,39 @@ namespace SJCNet.RecipeManager.WebAPI.Controllers
         }
 
         [HttpGet]
-        public Category Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return _uow.Categories.GetById(id);
+            return Ok(_uow.Categories.GetById(id));
         }
 
         [HttpGet]
-        public List<Category> Get()
+        public IHttpActionResult Get()
         {
-            return _uow.Categories.GetAll().ToList();
+            return Ok(_uow.Categories.GetAll().ToList());
         }
 
         [HttpPost]
-        public void Post(Category category)
+        public IHttpActionResult Post(Category category)
         {
             _uow.Categories.Add(category);
             _uow.Commit();
+
+            // Return the new object
+            return Ok(category);
         }
 
         [HttpPut]
-        public void Put(int id, Category category)
+        public IHttpActionResult Put(int id, Category category)
         {
-            var original = _uow.Categories.GetById(id);
-            if (original.Name != category.Name)
-            {
-                original.Name = category.Name;
-            }
-
+            _uow.Categories.Update(category);
             _uow.Commit();
+            return Ok(category);
         }
 
         [HttpDelete]
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            _uow.Categories.Delete(id);
-            _uow.Commit();
+            return Ok(_uow.Categories.Delete(id));
         }
     }
 }

@@ -46,6 +46,7 @@ namespace SJCNet.RecipeManager.WebAPI.Controllers
         public IHttpActionResult Put(int id, Recipe recipe)
         {
             _uow.Recipes.Update(recipe);
+            _uow.Commit();
             return Ok(recipe);
         }
 
