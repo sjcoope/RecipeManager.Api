@@ -109,14 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Development.pubxml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - FTP %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
