@@ -13,7 +13,7 @@ namespace SJCNet.RecipeManager.Data.Configuration
     {
         public IngredientConfiguration()
         {
-            HasKey(i => i.Id);
+            HasKey(i => new { i.Id });
             
             Property(i => i.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);

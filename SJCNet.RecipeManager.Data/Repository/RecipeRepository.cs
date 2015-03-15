@@ -18,6 +18,7 @@ namespace SJCNet.RecipeManager.Data.Repository
             EagerLoad(
                 i => i.Category,
                 i => i.Steps,
+                i => i.Tags,
                 i => i.Ingredients,
                 i => i.Ingredients.Select(x => x.Product),
                 i => i.Ingredients.Select(x => x.Measurement)

@@ -1,5 +1,5 @@
-﻿using SJCNet.RecipeManager.Test.Samples;
-using SJCNet.RecipeManager.Model;
+﻿using SJCNet.RecipeManager.Data;
+using SJCNet.RecipeManager.Test.Samples;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SJCNet.RecipeManager.Data
+namespace SJCNet.RecipeManager.Test.Common.Database
 {
-    public class RecipeManagerDbInitializer : DropCreateDatabaseIfModelChanges<RecipeManagerDbContext>
+    public class TestDatabaseInitializer : DropCreateDatabaseAlways<RecipeManagerDbContext>
     {
         protected override void Seed(RecipeManagerDbContext context)
         {

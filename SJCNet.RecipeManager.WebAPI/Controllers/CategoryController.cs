@@ -14,9 +14,9 @@ namespace SJCNet.RecipeManager.WebAPI.Controllers
     {
         private IRecipeManagerUow _uow = null;
 
-        public CategoryController()
+        public CategoryController(IRecipeManagerUow uow)
         {
-            _uow = new RecipeManagerUow();
+            _uow = uow;
         }
 
         [HttpGet]
