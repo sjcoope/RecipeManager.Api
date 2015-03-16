@@ -6,10 +6,6 @@ namespace SJCNet.RecipeManager.Test.Unit.Controllers
     [TestClass]
     public class RecipeControllerRouteTests
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            // TODO
-        }
+        
     }
 }
