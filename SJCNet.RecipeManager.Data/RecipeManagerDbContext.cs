@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace SJCNet.RecipeManager.Data
 {
+    [DbConfigurationType(typeof(RecipeManagerDbContextConfiguration))]
     public class RecipeManagerDbContext : DbContext
     {
         // TODO: What about disposing of this object after use?  is this controlled in DI framework (InstancePerRequest or something)?
@@ -26,10 +27,6 @@ namespace SJCNet.RecipeManager.Data
             this.Configuration.ProxyCreationEnabled = false;
             this.Configuration.AutoDetectChangesEnabled = false;
             this.Configuration.ValidateOnSaveEnabled = false;
-
-            // TODO - Remove when implementation settles down.
-            // Recreate the database and initialize the data.
-            Database.SetInitializer<RecipeManagerDbContext>(new RecipeManagerDbInitializer());
         }
 
         #endregion
