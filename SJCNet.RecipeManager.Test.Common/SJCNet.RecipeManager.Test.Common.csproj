@@ -69,6 +69,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SJCNet.RecipeManager.Common.Utility\SJCNet.RecipeManager.Common.Utility.csproj">
+      <Project>{2b939ea1-08de-4b65-8a14-1c47f1fc1e6e}</Project>
+      <Name>SJCNet.RecipeManager.Common.Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SJCNet.RecipeManager.Data.Sets\SJCNet.RecipeManager.Test.Samples.csproj">
       <Project>{7ef6a339-03f6-4cb7-befc-18248d172a9e}</Project>
       <Name>SJCNet.RecipeManager.Test.Samples</Name>
@@ -85,6 +89,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Artifacts\Database\ResetDatabase.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
