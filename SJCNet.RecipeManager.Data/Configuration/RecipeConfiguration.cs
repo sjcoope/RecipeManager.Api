@@ -31,7 +31,7 @@ namespace SJCNet.RecipeManager.Data.Configuration
             // Recipe has NONE OR MANY Ingredients, Ingredient has ONE Recipe
             HasMany(i => i.Ingredients)
                 .WithRequired()
-                .Map(i => i.MapKey("IngredientId"));
+                .Map(i => i.MapKey("RecipeId"));
 
             // Recipe has NONE OR MANY Tags, Tag has ONE Recipe
             HasMany(i => i.Tags)

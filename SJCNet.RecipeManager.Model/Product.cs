@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SJCNet.RecipeManager.Model.Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SJCNet.RecipeManager.Model
 {
-    public class Product
+    public class Product : IEntity
     {
         public int Id { get; set; }
 

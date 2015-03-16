@@ -1,4 +1,5 @@
 ﻿using SJCNet.RecipeManager.Data.Configuration;
+using SJCNet.RecipeManager.Test.Samples;
 using SJCNet.RecipeManager.Model;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace SJCNet.RecipeManager.Data
 {
     public class RecipeManagerDbContext : DbContext
     {
+        // TODO: What about disposing of this object after use?  is this controlled in DI framework (InstancePerRequest or something)?
+
         #region Constructors
 
         public RecipeManagerDbContext()
@@ -24,7 +27,8 @@ namespace SJCNet.RecipeManager.Data
             this.Configuration.AutoDetectChangesEnabled = false;
             this.Configuration.ValidateOnSaveEnabled = false;
 
-            // Recreate the database and initialize the data.
+            // Initialize the database
+            // TODO: Remove when implementation settles down.
             Database.SetInitializer<RecipeManagerDbContext>(new RecipeManagerDbInitializer());
         }
 
@@ -46,7 +50,7 @@ namespace SJCNet.RecipeManager.Data
             modelBuilder.Configurations.Add(new StepConfiguration());
             modelBuilder.Configurations.Add(new TagConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
-            
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -54,21 +58,21 @@ namespace SJCNet.RecipeManager.Data
 
         #region Properties
 
-        public DbSet<Category> Categories{ get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
-        public DbSet<Ingredient> Ingredients { get; set; }
+        public virtual DbSet<Ingredient> Ingredients { get; set; }
 
-        public DbSet<Measurement> Measurements { get; set; }
+        public virtual DbSet<Measurement> Measurements { get; set; }
 
-        public DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
-        public DbSet<Recipe> Recipes { get; set; }
+        public virtual DbSet<Recipe> Recipes { get; set; }
 
-        public DbSet<Step> Steps{ get; set; }
+        public virtual DbSet<Step> Steps { get; set; }
 
-        public DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         #endregion
     }

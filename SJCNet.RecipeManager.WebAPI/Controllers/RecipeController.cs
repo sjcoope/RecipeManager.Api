@@ -14,15 +14,20 @@ namespace SJCNet.RecipeManager.WebAPI.Controllers
     {
         private IRecipeManagerUow _uow = null;
 
-        public RecipeController()
+        public RecipeController(IRecipeManagerUow uow)
         {
-            _uow = new RecipeManagerUow();
+            _uow = uow;
         }
 
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            return Ok(_uow.Recipes.GetById(id));
+            var recipe = _uow.Recipes.GetById(id);
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+            return Ok(recipe);
         }
 
         [HttpGet]
