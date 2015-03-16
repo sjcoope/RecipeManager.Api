@@ -14,6 +14,7 @@ namespace SJCNet.RecipeManager.Data.Uow.Contract
         IRepository<Category> Categories { get; }
         IRepository<Ingredient> Ingredients { get; }
         IRepository<Measurement> Measurements { get; }
+        IRepository<Product> Products { get; }
         IRepository<Recipe> Recipes { get; }
         IRepository<Step> Steps { get; }
         IRepository<Tag> Tags { get; }
