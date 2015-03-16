@@ -1,5 +1,4 @@
-﻿using SJCNet.RecipeManager.Common.Utility;
-using SJCNet.RecipeManager.Data;
+﻿using SJCNet.RecipeManager.Data;
 using SJCNet.RecipeManager.Test.Samples;
 using System;
 using System.Collections.Generic;

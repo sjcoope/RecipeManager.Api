@@ -29,8 +29,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CI|AnyCPU'">
-    <OutputPath>bin\CI\</OutputPath>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy-Dev|AnyCPU'">
+    <OutputPath>bin\Deploy-Dev\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -38,17 +38,8 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
-    <OutputPath>bin\Staging\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
-    <OutputPath>bin\Test\</OutputPath>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy-Test|AnyCPU'">
+    <OutputPath>bin\Deploy-Test\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -78,10 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SJCNet.RecipeManager.Common.Utility\SJCNet.RecipeManager.Common.Utility.csproj">
-      <Project>{2b939ea1-08de-4b65-8a14-1c47f1fc1e6e}</Project>
-      <Name>SJCNet.RecipeManager.Common.Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SJCNet.RecipeManager.Data.Sets\SJCNet.RecipeManager.Test.Samples.csproj">
       <Project>{7ef6a339-03f6-4cb7-befc-18248d172a9e}</Project>
       <Name>SJCNet.RecipeManager.Test.Samples</Name>
