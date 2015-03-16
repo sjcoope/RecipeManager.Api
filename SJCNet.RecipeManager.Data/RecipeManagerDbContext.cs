@@ -21,6 +21,9 @@ namespace SJCNet.RecipeManager.Data
         public RecipeManagerDbContext()
             : base(ConfigurationManager.ConnectionStrings["ReceipeDb"].ConnectionString)
         {
+            // TODO: Comment or remove!
+            Type providerService = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+
             // Set-up config.
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
