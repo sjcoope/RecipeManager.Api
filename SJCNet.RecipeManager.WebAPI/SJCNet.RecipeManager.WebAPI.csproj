@@ -123,7 +123,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\sjcnetrecipemanager-prod-api - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-prod-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-staging-api - Web Deploy.pubxml" />
     <None Include="Web.CI.config">
