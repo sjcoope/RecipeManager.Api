@@ -113,6 +113,7 @@
     <Compile Include="App_Start\AutoFacConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -125,9 +126,6 @@
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-dev-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-prod-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\sjcnetrecipemanager-staging-api - Web Deploy.pubxml" />
-    <None Include="Web.CI.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,12 +136,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Staging.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>

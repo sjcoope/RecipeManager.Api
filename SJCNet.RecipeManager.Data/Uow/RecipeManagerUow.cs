@@ -18,6 +18,7 @@ namespace SJCNet.RecipeManager.Data.Uow
         IRepository<Category> _categories = null;
         IRepository<Ingredient> _ingredients = null;
         IRepository<Measurement> _measurements = null;
+        IRepository<Product> _products = null;
         IRepository<Recipe> _recipes = null;
         IRepository<Step> _steps = null;
         IRepository<Tag> _tags = null;
@@ -63,6 +64,11 @@ namespace SJCNet.RecipeManager.Data.Uow
         public IRepository<Measurement> Measurements
         {
             get { return _measurements ?? (_measurements = new EFRepository<Measurement>(this.Context)); }
+        }
+
+        public IRepository<Product> Products
+        {
+            get { return _products ?? (_products = new EFRepository<Product>(this.Context)); }
         }
 
         public IRepository<Recipe> Recipes
