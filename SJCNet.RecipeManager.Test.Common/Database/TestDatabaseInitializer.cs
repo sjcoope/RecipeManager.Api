@@ -16,7 +16,7 @@ namespace SJCNet.RecipeManager.Test.Common.Database
 
         public override void InitializeDatabase(RecipeManagerDbContext context)
         {
-            // Terminate any other connections to the database
+            // Stop anyone using the Db while initialization is running.
             context.Database.ExecuteSqlCommand(
                 TransactionalBehavior.DoNotEnsureTransaction, 
                 string.Format("ALTER DATABASE {0} SET SINGLE_USER WITH ROLLBACK IMMEDIATE", context.Database.Connection.Database));
@@ -37,6 +37,11 @@ namespace SJCNet.RecipeManager.Test.Common.Database
             context.SaveChanges();
 
             base.Seed(context);
+
+            // Enable use of the database again.
+            context.Database.ExecuteSqlCommand(
+                TransactionalBehavior.DoNotEnsureTransaction,
+                String.Format("ALTER DATABASE {0} SET MULTI_USER", context.Database.Connection.Database));
         }
     }
 }
