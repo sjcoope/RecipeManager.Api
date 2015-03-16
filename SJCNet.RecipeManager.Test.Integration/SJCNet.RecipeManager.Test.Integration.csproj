@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="Data\Repositories\RecipeRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SJCNet.RecipeManager.Data.Sets\SJCNet.RecipeManager.Test.Samples.csproj">
