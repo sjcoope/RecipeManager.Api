@@ -14,6 +14,7 @@ using SJCNet.RecipeManager.Test.Common.Database;
 namespace SJCNet.RecipeManager.Test.Integration.Data.Repositories.Recipes
 {
     [TestClass]
+    [DeploymentItem(@"Artifacts", @"Artifacts")]
     public class RecipeRepositoryTests
     {
         private RecipeManagerDbContext _context;

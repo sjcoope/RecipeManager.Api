@@ -4,6 +4,7 @@ using SJCNet.RecipeManager.Test.Samples;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,8 @@ namespace SJCNet.RecipeManager.Test.Common.Database
             // Remove any data and reset Ids
             context.Database.ExecuteSqlCommand(
                 TransactionalBehavior.DoNotEnsureTransaction,
-                FileHelper.GetTextFromFile(@"Artifacts\Database\ResetDatabase.sql"));
-            
+                File.ReadAllText(@"Artifacts\Database\ResetDatabase.sql"));
+
             base.InitializeDatabase(context);
             
             // Force reseeding - Reseeding done here as Seed method only called if DB model changes.
