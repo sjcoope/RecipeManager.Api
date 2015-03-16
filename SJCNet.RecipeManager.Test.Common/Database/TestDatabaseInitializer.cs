@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SJCNet.RecipeManager.Test.Common.Database
 {
-    public class TestDatabaseInitializer : DropCreateDatabaseAlways<RecipeManagerDbContext>
+    public class TestDatabaseInitializer : DropCreateDatabaseIfModelChanges<RecipeManagerDbContext>
     {
         protected override void Seed(RecipeManagerDbContext context)
         {
