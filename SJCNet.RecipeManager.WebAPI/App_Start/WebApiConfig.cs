@@ -11,9 +11,13 @@ namespace SJCNet.RecipeManager.WebAPI
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-            Configure(GlobalConfiguration.Configuration);
+            MapRoutes(config);
 
+            Configure(GlobalConfiguration.Configuration);
+        }
+
+        private static void MapRoutes(HttpConfiguration config)
+        {
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -26,10 +30,10 @@ namespace SJCNet.RecipeManager.WebAPI
 
         private static void Configure(HttpConfiguration config)
         {
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            // Remove support for XML in api
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
 
-            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
-            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }

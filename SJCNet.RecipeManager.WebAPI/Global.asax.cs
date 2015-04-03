@@ -1,11 +1,6 @@
 ﻿using SJCNet.RecipeManager.WebAPI.App_Start;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
 using System.Web.Http;
-using System.Web.Routing;
+using FluentValidation.WebApi;
 
 namespace SJCNet.RecipeManager.WebAPI
 {
@@ -15,6 +10,7 @@ namespace SJCNet.RecipeManager.WebAPI
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AutoFacConfig.ConfigureDependencyResolver(GlobalConfiguration.Configuration);
+            FluentValidationModelValidatorProvider.Configure(GlobalConfiguration.Configuration);
         }
     }
 }

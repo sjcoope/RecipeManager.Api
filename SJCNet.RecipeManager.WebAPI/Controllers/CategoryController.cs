@@ -1,18 +1,13 @@
-﻿using SJCNet.RecipeManager.Data.Uow;
-using SJCNet.RecipeManager.Data.Uow.Contract;
+﻿using SJCNet.RecipeManager.Data.Uow.Contract;
 using SJCNet.RecipeManager.Model;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace SJCNet.RecipeManager.WebAPI.Controllers
 {
     public class CategoryController : ApiController
     {
-        private IRecipeManagerUow _uow = null;
+        private readonly IRecipeManagerUow _uow = null;
 
         public CategoryController(IRecipeManagerUow uow)
         {
